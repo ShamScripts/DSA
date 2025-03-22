@@ -1,11 +1,4 @@
-# BITS PILANI, DUBAI CAMPUS  
-**DUBAI INTERNATIONAL ACADEMIC CITY, DUBAI**  
-**SECOND SEMESTER 2024 - 2025**  
-
-## Data Structures & Algorithms (CS F211)  
-### Lab Exercise 1  
-
----
+# Lab Exercise 1  
 
 ### Objective
 
