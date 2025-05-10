@@ -41,6 +41,40 @@ This repository contains Java programs for weekly lab exercises in the **Data St
 - Display unsorted and sorted lists.
 - Measure execution time.
 
+### WEEK7 — Quick Sort
+- Read and store multiple student records (`Name, ID, CGPA`).
+- Sort the records in **ascending order of CGPA** using **Quick Sort (recursive)**.
+- Display intermediate array states after each partition.
+- Show unsorted and sorted records.
+- Measure and display the **time taken for sorting**.
+
+### WEEK8 — Hash Table with Chaining
+- Implement a **Hash Table** using **Separate Chaining** (Linked Lists).
+- Compute hash value using a custom ASCII-based hash function.
+- Insert multiple strings into the table and manage collisions via chaining.
+- Perform search and delete operations.
+- Display the hash table after each operation.
+
+### WEEK9 — Hash Table with Open Addressing
+- Implement a **Hash Table** using **Open Addressing**:
+  - **Linear Probing** and **Quadratic Probing** for collision resolution.
+- Compute hash values using a custom formula.
+- Support operations:
+  - Add keys
+  - Search for keys
+  - Delete keys
+  - Display the full table showing EMPTY, OCCUPIED, and DELETED states.
+
+### WEEK10 — Binary Search Tree (BST)
+- Implement a **Binary Search Tree (BST)** to store strings as keys.
+- Support operations:
+  - Insert, Search, Delete (with **Inorder Predecessor** replacement).
+  - Pre-order, In-order, and Post-order traversals.
+- (Optional) Additional operations:
+  - Find smallest/largest string
+  - Find height of BST
+  - Count total nodes, internal nodes, and leaf nodes.
+
 ---
 
 ## How to Run
