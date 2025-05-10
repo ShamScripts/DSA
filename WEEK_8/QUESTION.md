@@ -2,20 +2,19 @@
 
 ## Objective
 
-Write a **C/C++/Java** program to implement a **Hash Table** using the **Open Addressing** method with both **Linear Probing** and **Quadratic Probing**.
+Write a **C/C++/Java** program to implement a **Hash Table** using **Separate Chaining** with linked lists.
 
 ---
 
 ## Instructions
 
 - Create a **hash table** of size `MAX_SIZE` to store **strings as keys**.
-- Collision Resolution:
-  - **Linear Probing**
-  - **Quadratic Probing**
-- Each table location should indicate if it is:
-  - **EMPTY**
-  - **OCCUPIED**
-  - **DELETED**
+- Handle collisions using **Separate Chaining**:
+  - Each hash table index points to a **linked list**.
+- Strings may contain:
+  - English alphabets (uppercase and lowercase)
+  - Digits
+  - Special symbols (`#`, `$`, `*`, etc.)
 
 ---
 
@@ -35,50 +34,88 @@ MOD MAX_SIZE
 Example:  
 Input String: `Az98*#`,  
 MAX_SIZE = 7,  
-Hash Value = `((65+122) + 3*(57+56) + 5*(42+35) +7) % 7 = 918 % 7 = 1`
+Hash Value = `((65+122) + 3*(57+56) + 5*(42+35) +7) % 7 = 918 % 7 = 6`
 
 ---
 
 ## Operations
 
-- **Add**: Compute and insert the string at the appropriate index using probing.
-- **Search**: Find and display whether a key exists.
-- **Delete**: Delete a given key and mark its slot as **DELETED**.
-- **Display**: Show the full hash table with states.
+- **Insert**: Compute the hash and insert into corresponding chain (linked list).
+- **Display**: Show all chains for each index.
+- **Search**: Find a key in the hash table and display outcome.
+- **Delete**: Remove a key and update the chain.
 
 ---
 
-## Sample Output Snippets
+## Test Scenario
 
-### Linear Probing
-
-```
-Enter the string to add: hello → Key hello added at index 0
-Enter the string to add: world → Key world added at index 6
-Enter the string to add: hashing → Key hashing added at index 3
-
-Full Hash Table:
-0: hello
-1: EMPTY
-2: EMPTY
-3: hashing
-6: world
-```
-
-### Quadratic Probing
+**Input Strings:**
 
 ```
-Enter the string to add: hello → Key hello added at index 0
-Enter the string to add: world → Key world added at index 6
-Collision handled for "world", added at index 3
-Enter the string to add: hashing → Collision handled and added at index 4
+M2y N3x F4w O5v D*2u A2t K5#y M6z N7a Y3w
+b2Y e3X f4W c5V d2U a2T J5Y m6%Z n7A y3W
 ```
+
+---
+
+### Sample Hash Values
+
+| String | Hash Value |
+|--------|------------|
+| M2y    | 5          |
+| N3x    | 1          |
+| F4w    | 2          |
+| O5v    | 6          |
+| D2u    | 6          |
+| A2t    | 2          |
+| K5y    | 5          |
+| M6z    | 4          |
+| N7a    | 4          |
+| Y3w    | 4          |
+| b2Y    | 1          |
+| e3X    | 6          |
+| f4W    | 2          |
+| c5V    | 1          |
+| d2U    | 6          |
+| a2T    | 2          |
+| J5Y    | 0          |
+| m6Z    | 4          |
+| n7A    | 4          |
+| y3W    | 4          |
+
+---
+
+### Sample Hash Table After Insertion
+
+```
+[0]: -> m6%Z -> J5Y
+[1]: -> c5V -> b2Y -> N3x
+[2]: -> a2T -> f4W -> A2t -> F4w
+[3]: 
+[4]: -> y3W -> n7A -> Y3w -> N7a -> M6z
+[5]: -> K5#y -> M2y
+[6]: -> d2U -> e3X -> D*2u -> O5v
+```
+
+---
+
+### Sample Operations
+
+- **Delete**:  
+  Delete `b2Y`
+  ```
+  [1]: -> c5V -> N3x
+  ```
+
+- **Search**:  
+  Search `a2T` → **Key found at index 2**  
+  Search `wew423` → **Key not found**
 
 ---
 
 ## Notes
 
-- Open Addressing helps resolve collisions without chaining.
-- Linear and Quadratic probing strategies demonstrate different collision behaviors.
+- Separate chaining prevents clustering problems of open addressing.
+- Linked list allows multiple keys at the same index neatly.
 
 ---
